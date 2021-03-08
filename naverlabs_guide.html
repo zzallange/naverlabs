@@ -1,0 +1,408 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>naver labs Guide</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="description" content="선희의 코드가이드">
+		<meta name="keywords" content="웹퍼블리셔,양선희,포트폴리오,html,css,javascript">
+		<meta name="author" content="양선희">
+        <meta name="description" content="웹퍼블리셔,양선희,포트폴리오,html,css,javascript">
+		<meta name="NaverBot" content="All">
+		<meta name="NaverBot" content="index,follow">
+		<meta name="Yeti" content="All">
+		<meta name="Yeti" content="index,follow">
+		<meta property="og:url" content="http://www.naverlabs.com/">
+		<meta property="og:title" content="NAVER LABS">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://www.naverlabs.com/img/naverlabs.png">
+		<meta property="og:description" content="sunny의 naver labs 퍼블리싱 작업입니다.">
+		<meta property="og:image">
+		<style>
+            html,body {margin: 0; padding: 0; font-family: 'notokrR';}
+            div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;}
+            ul,ol,li {list-style: none;}
+            table {border-collapse:collapse;border-spacing:0;vertical-align:top;}
+            
+            .guide_wrap {padding: 20px; box-sizing:border-box;}
+            header {margin-bottom: 50px; padding-bottom: 20px; border-bottom: 1px solid #111;}
+            header h1 {margin-bottom: 25px;}
+            header .site {letter-spacing: -1px;}
+            header .site a {font-weight: bold; letter-spacing: 0; color: #111;}
+            
+            /* 퍼블 일정표 */
+            .code_info {margin-bottom: 25px; width: 100%; border-collapse: collapse; text-align: center; font-size: 13px;}
+            .code_info .title {background: rgba(0,0,0,.05);}
+            .code_info .title th {padding: 5px 0; }
+            .code_info thead tr {border: 0 none; }
+            .code_info tbody tr {border: 1px solid rgba(0,0,0,.07); text-align: left;}
+            .code_info tr .name {border-right: 1px solid rgba(0,0,0,.07);}
+            .code_info tr:hover {background: rgba(0,0,0,.05);}
+            .code_info td {padding: 5px 0;}
+            .code_info tr.active {background: gold;}
+            .code_info td {padding-left: 5%; text-align: left;}
+            .code_info td .hover_color {color:#004ddc; }
+            .code_info td .bg_color {color: #595959; background: rgba(0,0,0,.03); }
+            
+            main {padding-top: 15px;}
+            
+            /* 코드정의서 */
+            .code_puble {}
+            .code_puble h2 {margin-bottom: 25px; font-size: 25px;}
+            .code_puble h2 span {font-size: 14px; color:#555;}
+            .code_puble > div {margin-bottom: 50px; }
+            .code_puble .color .tit {font-size: 16px; letter-spacing: -1px; font-weight: 600; color: #333;}
+            .code_puble .color ul {padding-bottom: 35px; border-bottom: 2px solid #333; margin: 15px 0 20px; display: flex; justify-content:flex-start;}
+            .code_puble .color ul li {width: calc(100% / 3);}
+            .code_puble .color ul li p {display: inline-block; padding: 15px 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; color: #fff; font-weight: 500;}
+            
+            .code_puble .color ul li .c01 {border: 1px solid #ddd; color: #555; background: #fff;}
+            .code_puble .color ul li .c02 {background:#0078ff;}
+            .code_puble .color ul li .c03 {background:#333;}
+            .code_puble .color ul li .c04 {background:#666;}
+            .code_puble .color ul li .c05 {background:#999;}
+            .code_puble .color ul li .c06 {border: 1px solid #dbdde3; color: #7b818e; background:#f3f5f8;}
+            .code_puble .color ul li .c07 {background:#ccc;}
+            .code_puble .color ul li .c08 {background:#1a1a1a;}
+            .code_puble .color ul li .c09 {background:#787878; border: 1px solid #787878;}
+            /* hover color */
+            .code_puble .color ul li .c03:hover {background:#0078ff;}
+            .code_puble .color ul li .c04:hover {background:#000;}
+            .code_puble .color ul li .c06:hover {background:#0078ff; color: #fff; border-color:#0078ff}
+            .code_puble .color ul li .c09:hover {border: 1px solid #ddd; color: #555; background: #fff;}
+            /* //hover color */
+            .code_puble .color ul li .color_info {margin-left: 10px; display: inline-block; vertical-align: top; letter-spacing: -0.5px;}
+            .code_puble .color ul li .color_info strong {display: block; margin-bottom: 4px; letter-spacing: 0; }
+            
+            .code_puble [class*="_layout"] {width: 100%;}
+            .code_puble [class*="_layout"]:after {content:'';display: block;clear: both}
+            .code_puble table[class*="_table"] {width: 100%;}
+            .code_puble table[class*="_table"] td {padding: 5px 15px; border-bottom: 1px solid rgba(0,0,0,.07);}
+            .code_puble table[class*="_table"] td.name {letter-spacing: -0.5px; background: #eee;}
+            
+            .code_puble .font {float: left; width: calc(50% - 20px);}
+            
+            .code_puble .font_style {float: right; width: calc(50% - 30px); font-family: 'Roboto',"Noto Sans KR",sans-serif;}
+            .code_puble .font_style .view-title {font-family: 'Roboto',"Noto Sans KR",sans-serif; font-size: 20.4px; color: #333;}
+            .code_puble .font_style [class*="view-"] span {position: relative; margin-left: 75px; font-size: 14px; font-weight: 400; color: #555;}
+            .code_puble .font_style [class*="view-"] span:before {content:''; position: absolute; left: -55px; bottom: 8px; width: 50px; height: 1px; background: #333;}
+            .code_puble .font_style .image {border: 1px solid #ddd; text-align: center; padding: 50px 0;}
+            .code_puble .font_style .view-tit {position: relative; margin: 5px 0; font-size: 24px; }
+            .code_puble .font_style .view-tit:hover {color:#0078ff; }
+            .code_puble .font_style .view-date { font-size: 13.2px; color: #999;}
+            .code_puble .font_style .view-info {margin-top: 10px; font-size: 14.4px; color: #666;}
+            .code_puble .font_style .view-info:hover {color: #000;}
+            .code_puble .font_style .view-btn {position: relative; margin: 35px auto 0; width: 200px; border: 1px solid #999; color: #555; text-align: center; font-size: 16.2px; font-weight: 600; line-height: 50px; background: transparent;}
+            .code_puble .font_style .view-btn:hover {border-color: #0078ff; color: #fff;}
+            .code_puble .font_style .view-btn:before {content:'';position: absolute; left: 0; top: 0; z-index: -1; width: 0; height: 100%; background: #0078ff; transition: width 0.12s;}
+            .code_puble .font_style .view-btn:hover:before {width: 100%;}
+            
+            .code_puble .cont_layout .layout {float: left; width: calc(50% - 20px);}
+            .cont_layout .layout .inwrap {border: 1px solid #ddd; height: 490px; text-align: center;}
+            .cont_layout .layout .head {height: 80px; background: rgba(0,0,0,.2);}
+            .cont_layout .layout .inwrap p {padding-top: 15px; font-size: 20px; color: #fff;}
+            .cont_layout .layout .inwrap span {display: block;font-weight: 600;}
+            .cont_layout .layout .inwrap .section {background: rgba(0,0,0,.3);}
+            .cont_layout .layout .inwrap .section span {padding-bottom: 15px; border-bottom: 1px solid #eee; }
+            .cont_layout .layout .inwrap .section strong {margin-top: 10px; display: block;}
+            .cont_layout .layout .inwrap .section:after {content:'';display: block;clear: both}
+            .cont_layout .layout .inwrap .section .aside {float: left; width: 175px; height: 250px; border-right: 1px solid #eee; background: rgba(0,0,0,.2)}
+            .cont_layout .layout .inwrap .section .aside p {margin-top: 45px;}
+            .cont_layout .layout .inwrap .section .cont {float: right; width: calc(100% - 195px); height: 250px; background: rgba(0,0,0,.2);}
+            .cont_layout .layout .inwrap .section .cont p {margin-top: 45px;}
+            .cont_layout .layout .inwrap .footer {clear: both; background: rgba(0,0,0,.4); height: 80px;}
+            .cont_layout .media,.cont_layout .script {float: right; width: calc(50% - 30px);}
+            
+            .cont_layout .script h2 {margin-top: 25px;}
+        </style>
+	</head>
+
+	<body>
+        <div class="guide_wrap">
+            <header>
+                <h1>Web. Naver labs</h1>
+                <table class="code_info">
+                    <colgroup>
+                        <col width="*">
+                        <col width="35%">
+                    </colgroup>
+                    <thead>
+                        <tr class="title">
+                            <th colspan="4">퍼블 기획 및 일정</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name">메인페이지 마크업 작성, 페이지별 공통사항 점검, css PC/M 반응형 작업</td>
+                            <td>1.5 일</td>
+                        </tr>
+                        <tr>
+                            <td class="name">서브페이지 story / publications 공통 레이아웃 마크업 및 PC/M 반응형 작업 </td>
+                            <td>1 일</td>
+                        </tr>
+                        <tr>
+                            <td class="name">기사뷰페이지, 호환성</td>
+                            <td>1일</td>
+                        </tr>
+                    </tbody>
+                </table>   
+                <div class="site">
+                    사이트주소 : <a href="https://zzallange.github.io/naverlab/main.html" target="_blank">https://zzallange.github.io/naverlab/main.html</a>
+                </div>
+            </header>
+            <main>
+                <div class="code_puble">
+                    <div class="color">
+                        <h2>Color
+                            <span> hover시 변경되는 색상은 컬러에 hover시 색상이 변경됩니다.</span>
+                        </h2>
+                        <p class="tit">공통</p>
+                        <ul>
+                            <li>
+                                <p class="c01">FFFFFF</p>
+                                <div class="color_info">
+                                    <strong>Primary Color</strong>
+                                    메인메뉴, 버튼 , 포인트, 배경컬러
+                                </div>
+                            </li>
+                            <li>
+                                <p class="c02">0078FF</p>
+                                <div class="color_info">
+                                    <strong>Second Color</strong>
+                                    hover컬러:메뉴, 기사제목, 버튼
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="tit">Font Color</p>
+                        <ul>
+                            <li>
+                                <p class="c03">333333</p>
+                                <div class="color_info">
+                                    <strong>h1 - h6</strong>
+                                    헤드라인, 서브타이틀
+                                </div>
+                            </li>
+                            <li>
+                                <p class="c04">666666</p>
+                                <div class="color_info">
+                                    <strong>Text Color</strong>
+                                    리드글 컬러
+                                </div>
+                            </li>
+                            <li>
+                                <p class="c05">999999</p>
+                                <div class="color_info">
+                                    <strong>Time Color</strong>
+                                    시간, 날짜, 작성자, 버튼, 푸터 sns
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="tit">Border Color</p>
+                        <ul>
+                            <li>
+                                <p class="c06">DBDDE3</p>
+                                <div class="color_info">
+                                    <strong>Keyword Color</strong>
+                                    키워드, 카테코리
+                                </div>
+                            </li>
+                            <li>
+                                <p class="c07">CCCCCC</p>
+                                <div class="color_info">
+                                    <strong>Line Color</strong>
+                                    구분선컬러
+                                </div>
+                            </li>
+                            <li>
+                                <p class="c08">1A1A1A</p>
+                                <div class="color_info">
+                                    <strong>Line Color</strong>
+                                    서브페이지 메뉴
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="tit">Footer</p>
+                        <ul>
+                            <li>
+                                <p class="c09">787878</p>
+                                <div class="color_info">
+                                    <strong>Info Color</strong>
+                                    개인정보 처리방침, 사이트바로가기
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- font_layout -->
+                    <div class="font_layout">
+                    <!-- font -->
+                    <div class="font">
+                        <h2>Font</h2>
+                        <table class="font_table">
+                            <colgroup>
+                                <col width="20%">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="name">Font-Family</td>
+                                    <td>Roboto,"Noto Sans KR",sans-serif</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Size</td>
+                                    <td>em, px 단위</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Body</td>
+                                    <td>12px (1em = 12px 적용)</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Menu</td>
+                                    <td>1.15em = 13.8px</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Sub Title</td>
+                                    <td>1.7em = 20.4px</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">News/Video List Title</td>
+                                    <td>2em = 24px</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Date/Author</td>
+                                    <td>1.1em = 13.2px</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">리드글</td>
+                                    <td>1.2em = 14.4px</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Button</td>
+                                    <td>1.35em = 16.2px</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">Keyword/Category</td>
+                                    <td>0.95em = 11.4px</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //font -->
+                    <!-- font-style -->
+                    <div class="font_style">
+                        <h2>Font적용</h2>   
+                        <h2 class="view-title">News
+                            <span>Sub Title : 1.7em / #333</span>
+                        </h2>
+                        <div class="image">IMAGE</div>
+                        <div class="view-tit">기사뷰 타이틀입니다.
+                            <span>News List title: 2em</span>
+                        </div>
+                        <div class="view-date">2020.04.27 ㅣ sunny
+                            <span>Date/Author: 1.1em</span>
+                        </div>
+                        <div class="view-info">리드글은 1.2em으로 14.4px로 사용되었습니다.리드글은 1.2em으로 14.4px로 사용되었습니다.리드글은 1.2em으로 14.4px로 사용되었습니다.리드글은 1.2em으로 14.4px로 사용되었습니다.리드글은 1.2em으로 14.4px로 사용되었습니다.리드글은 1.2em으로 14.4px로 사용되었습니다.</div>
+                        <div class="view-btn">Button</div>
+                    </div>
+                    <!-- //font-style -->
+                    </div>
+                    <!-- //font_layout -->
+                    <div class="cont_layout">
+                        <div class="layout">
+                            <h2>Layout</h2> 
+                            <div class="inwrap">  
+                                <div class="head">
+                                    <p>Header</p>
+                                    <span>max-width: 1015px</span>
+                                </div>
+                                <div class="section">
+                                    <p>Section</p>
+                                    <span>max-width: 1000px</span>
+                                    <div class="aside">
+                                        <p>Aside</p>
+                                        <strong>keyword/category
+                                            <br>width: 160px
+                                        </strong>
+                                    </div>
+                                    <div class="cont">
+                                        <p>Cont</p>
+                                        <strong>width: calc(100% - 180px)
+                                        <br>aside 160px + 왼쪽여백 20px = 180px</strong>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <p>Footer</p>
+                                    <span>padding 위아래 60px</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <h2>Mediaquery</h2>
+                            <table class="media_table">
+                            <colgroup>
+                                <col width="20%">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="name">1060px</td>
+                                    <td>[class*="_inner"] - width:100% / padding:0 20px
+                                    <br>header - height:54px / Fixed
+                                    <br>m_allmenu 모바일메뉴 보이기
+                                    <br>gnb 모바일스타일로 변경
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="name">900px</td>
+                                    <td>
+                                        keyword,article - width:100% / float:none
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="name">690px</td>
+                                    <td>news,video_list - width:48.5% 3개->2개 컨텐츠나열
+                                    <br>article_news 썸네일 - width:100% / padding-bottom: 48.5%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="name">425px</td>
+                                    <td>공통버튼[class*="btn0_"] 크기변경
+                                        <br>메인섹션 타이틀 변경
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="script">
+                            <h2>script</h2>
+                            <table class="script_table">
+                            <colgroup>
+                                <col width="35%">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td class="name">슬라이드 스와이프</td>
+                                    <td>main, story, log 페이지 상단 적용</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">페이드인아웃 슬라이드</td>
+                                    <td>log 페이지 하단 적용</td>
+                                </tr>
+                                <tr>
+                                    <td class="name">상단버튼</td>
+                                    <td>각 페이지 하단에 적용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>   
+            </main>
+        </div>
+	</body>
+	
+</html>
+
+

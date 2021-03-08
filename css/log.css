@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+.log_section {padding-top: 50px;}
+.log_section .top_thumb {margin: 0 auto; padding-bottom: 60px; width: 1000px; text-align: center;}
+.log_section .top_thumb .log-slide {height: 400px; }
+.log_section .top_thumb .log-slide [class*="photo"] {width: 100%; height: 400px;}
+.log_section .top_thumb .log-slide .photo1 { background: url(../img/log/spot_log1.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_section .top_thumb .log-slide .photo2 { background: url(../img/log/spot_log2.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_section .top_thumb .log-slide .photo3 { background: url(../img/log/spot_log3.jpg) 50% 50% no-repeat; background-size: cover;}
+
+.top_thumb .log-slide .swiper-pagination-bullet {width: 30px; height: 4px; border-radius: 0; background: #fff; opacity: 1;}
+.top_thumb .log-slide .swiper-pagination-bullet-active {background: #0078ff;}
+
+.log_section .top_thumb p {margin-top: 50px; font-size: 14px; line-height: 24px; font-weight: 400; color: #555;}
+
+.log_section .log_cont {padding: 65px 0; text-align: center;}
+.log_section .type2 {background: #f6f6f6;}
+
+.log_cont .title {margin-bottom: 10px; font-size: 32px; font-weight: bold; text-align: left; color:#333;}
+.log_cont .sub_tit {font-size: 14px; font-weight: bold; text-align: left; color:#333;}
+.log_cont .video_lst {margin-top: 0;}
+.log_cont .video_lst li {margin-top: 30px;}
+.log_cont .video_lst li a .photo {position: relative;}
+.log_cont .video_lst li a .photo:after {content: ''; display: none; position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,.5) url(../img/log/ico_btn_play.png) 50% 50% no-repeat; background-size: 60px 60px;}
+.log_cont .video_lst li a .photo:hover:after {display: block;}
+.log_cont .video_lst li a .text {margin-top: 15px; text-align: left; height: 70px; font-size: 16px; font-weight: normal; letter-spacing: 0;}
+
+.log_allcont {position: relative; width: 100%; overflow: hidden; height: 800px;}
+.log_allcont .log-fade {}
+.log_allcont .log-fade [class*="visual"] {width: 100%;height: 800px;}
+.log_allcont .log-fade .visual01 {width: 100%; background: url(../img/log/bg_log_1.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_allcont .log-fade .visual02 {background: url(../img/log/bg_log_2.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_allcont .log-fade .visual03 {background: url(../img/log/bg_log_3.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_allcont .log-fade .visual04 {background: url(../img/log/bg_log_4.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_allcont .log-fade .visual05 {background: url(../img/log/bg_log_5.jpg) 50% 50% no-repeat; background-size: cover;}
+.log_allcont .log-fade .visual06 {background: url(../img/log/bg_log_6.jpg) 50% 50% no-repeat; background-size: cover;}
+
+.log_allcont .log-title {position: absolute; left: 50%; top: 50%; z-index: 5; transform: translate(-50%,-50%);}
+.log_allcont .log-title h2 {text-align: center; font-size: 42px; line-height: 52px; font-weight: bold; color: #fff;}
+.log_allcont .log-title a {color: #fff;}
+.log_allcont .log-title .btn0_all-video {margin-right: 5px;}
+
+@media all and (max-width:1060px){
+    .log_section .top_thumb {width: 100%; }
+    .log_section .top_thumb .log-slide {height: 440px;}
+    .log_section .top_thumb .log-slide [class*="photo"] {height: 440px;}
+    .log_section .top_thumb p {margin-top: 40px;}
+    
+    .log_allcont {height: 500px; text-align: center;}
+    .log_allcont .log-fade [class*="visual"] {height: 500px;} 
+    .log_allcont .log-title {left: 0; top:120px; right: 0; bottom: 0; transform: translate(0,0); padding: 0 20px;}
+}
+
+@media all and (max-width:690px){
+    .log_cont .video_lst li {width: 100%;}
+    .log_cont .video_lst li.second {margin: 30px 0 0 0;}
+}
+
+@media all and (max-width:425px){
+    .log_section .top_thumb {padding-bottom: 40px;}
+    .log_section .top_thumb .log-slide {height: 360px; } 
+    .log_section .top_thumb .log-slide [class*="photo"] {height: 360px;}
+    .log_section .top_thumb p {margin-top: 25px;}
+    
+    .log_section .log_cont {padding: 45px 0;}
+    
+    .log_cont .video_lst li a .text {height: 45px;}
+    .log_cont .btn0_all {width: 100%;}
+    
+    .log_allcont {height: 285px;}
+    .log_allcont .log-fade .swiper-slide img {width: 100%; height: 500px;}
+    
+    .log_allcont .log-title {top: 70px;}
+    .log_allcont .log-title h2 {font-size: 24px; line-height: 1.2;}
+    .log_allcont .log-title .btn0_all-video {margin: 20px 0 0 0; width: 100%;}
+    .log_allcont .log-title .btn0_all-project {margin-top: 5px; width: 100%;}
+}
+
+
+
+
